@@ -13,12 +13,12 @@ const Navbar = () => (
   shape="roundedBottom"
   >
     { /* Signin Link */ }
-    <NavLink to="/signin">
+    <NavLink activeClassName="active" to="/signin">
       <Text size="x1" color="white" >Signin</Text>
     </NavLink>
 
     { /* Title and Logo */ }
-    <NavLink to="/">
+    <NavLink activeClassName="active" exact to="/">
       <Box display="flex" alignItems="center">
         <Box height={50} width={50} margin="2">
           <Image 
@@ -35,7 +35,7 @@ const Navbar = () => (
     </NavLink>
 
     { /* Signup In Link */ }
-    <NavLink to="/signup">
+    <NavLink activeClassName="active" to="/signup">
       <Text size="x1" color="white" >Signup</Text>
     </NavLink>
 
