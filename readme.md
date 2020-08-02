@@ -68,3 +68,7 @@ CMS. It’s 100% Javascript, fully customizable and developer-first
 - [Source code for the "Build an Online Store with React and GraphQL in 90 Minutes" Udemy Course.](https://github.com/peelmicro/build-an-online-store-with-react-and-graphql-in-90-minutes)
 - [FAQ: No LogoTypes shows up..](https://www.udemy.com/course/build-an-online-store-with-react-and-graphql-in-90-minutes/learn/lecture/11669406#questions/9412605)
 - [React Spinners](https://www.davidhu.io/react-spinners/)
+- [A Guide To The Reduce Method In Javascript​](https://www.freecodecamp.org/news/reduce-f47a7da511a9/)
+- [Finally Understand the JavaScript Reduce Method](https://alligator.io/js/finally-understand-reduce/)
+- [Reduce() : Le couteau suisse du développeur Javascript](https://medium.com/@hkairi/reduce-le-couteau-suisse-du-d%C3%A9veloppeur-javascript-8cf4b6f98304)
+- [Deploying a Strapi API on Heroku](https://strapi.io/blog/deploying-a-strapi-api-on-heroku)

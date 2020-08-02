@@ -15,6 +15,7 @@ class App extends Component {
     loadingBrands: true
   }
 
+  // Retrieve the brands datas
   async componentDidMount() {
     try{
       const response = await strapi.request('POST', '/graphql', {
@@ -40,6 +41,7 @@ class App extends Component {
     }
   };
 
+  // Input listener
   handleChange = ({value}) => {
     this.setState({ searchTerm: value });
   };
