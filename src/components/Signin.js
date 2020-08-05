@@ -39,7 +39,9 @@ class Signin extends React.Component {
           this.redirectUser("/");
         } catch (err) {
           this.setState({ loading: false });
-          this.showToast(err.message);
+          console.log(err.message);
+          //this.showToast(err.message);
+          this.showToast('New user, please sign up first!');
         }
   };
 
