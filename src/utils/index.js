@@ -1,7 +1,7 @@
 //Helpers page
 
 const CART_KEY = 'cart';
-
+const TOKEN_KEY = 'jwt';
 
 
 //calculate price
@@ -14,17 +14,48 @@ export const calculatePrice = items => {
   }`
 }
 
+
+//CART
 //Persisting cart even if we refresh using local storage
+//Set
 export const setCart = (value, cartKey = CART_KEY) => {
   if(localStorage){
     localStorage.setItem(cartKey, JSON.stringify(value));
   }
 }
+//Get
 export const getCart = (cartKey = CART_KEY) => {
   if(localStorage && localStorage.getItem(cartKey)){
     return JSON.parse(localStorage.getItem(cartKey));
   }
   return [];
+};
+//Clear cart
+export const clearCart = (cartKey = CART_KEY) => {
+  if (localStorage) {
+    localStorage.removeItem(cartKey);
+  }
+}
+
+//Auth - JSON Web Tokens
+//Set
+export const setToken = (value, tokenKey = TOKEN_KEY) => {
+  if (localStorage) {
+    localStorage.setItem(tokenKey, JSON.stringify(value));
+  }
+};
+//Get
+export const getToken = (tokenKey = TOKEN_KEY) => {
+  if (localStorage && localStorage.getItem(tokenKey)) {
+    return JSON.parse(localStorage.getItem(tokenKey));
+  }
+  return null;
+};
+//Clear cart
+export const clearToken = (tokenKey = TOKEN_KEY) => {
+  if (localStorage) {
+    localStorage.removeItem(tokenKey);
+  }
 }
 
 /*
