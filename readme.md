@@ -15,12 +15,12 @@ Strapi:
 ```
 cd server //(or name choosen)
 
-npm run start
+npm run develop
 ```
 
 ## React
 
-Use import in React to import Strapi as comonent:
+Use import in React to import Strapi as component:
 
 ```
 import Strapi from 'strapi-sdk-javascript/build/main';
@@ -57,10 +57,12 @@ query {
 - [Gestalt](https://madewithreact.com/gestalt-react-ui-components/), React UI Components
 - [Strapi](https://strapi.io/), Strapi is the leading open-source headless
 CMS. It’s 100% Javascript, fully customizable and developer-first
-
-      Use `npm run develop` to launch strapi in developer mode
+      => Use `npm run develop` to launch strapi in developer mode
       (otherwise won't be possible to add content-types)
 - GraphGL: installed using Strapi dashboard.
+- [Stripe](https://stripe.com/fr-be), Online payment processing for internet businesses
+      => Use `npm i stripe` after modifying *server/api/orders/controllers/order.js*
+
 
 ## Useful Links
 

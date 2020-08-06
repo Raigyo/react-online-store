@@ -1,0 +1,33 @@
+{
+  "kind": "collectionType",
+  "collectionName": "orders",
+  "info": {
+    "name": "Orders"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true
+  },
+  "attributes": {
+    "adress": {
+      "type": "string",
+      "required": true
+    },
+    "postalcode": {
+      "type": "biginteger",
+      "required": true
+    },
+    "city": {
+      "type": "string",
+      "required": true
+    },
+    "brews": {
+      "type": "json",
+      "required": true
+    },
+    "amount": {
+      "type": "decimal",
+      "required": false
+    }
+  }
+}

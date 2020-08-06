@@ -1,14 +1,19 @@
 import React from "react";
 import { Container, Box, Button, Heading, Text, TextField, Modal, Spinner } from "gestalt";
+import { Elements, StripeProvider, CardElement, injectStripe } from "react-stripe-elements";
 import ToastMessage from "./ToastMessage";
-import { getCart, calculatePrice } from "../utils";
+import { getCart, calculatePrice, clearCart, calculateAmount } from "../utils";
+import { withRouter } from "react-router-dom";
+import Strapi from "strapi-sdk-javascript/build/main";
+const apiUrl = process.env.API_URL || "http://localhost:1337";
+const strapi = new Strapi(apiUrl);
 
-class Checkout extends React.Component {
+class _CheckoutForm extends React.Component {
 
   state = {
     cartItems: [],
     address: "",
-    postalCode: "",
+    postalcode: "",
     city: "",
     confirmationEmailAddress: "",
     toast: false,
@@ -37,17 +42,59 @@ class Checkout extends React.Component {
     this.setState({ modal: true });
   }
 
-  handleSubmitOrder = () => {
+  handleSubmitOrder = async () => {
+    const { cartItems, city, address, postalcode } = this.state;
 
-  }
-
-  isFormEmpty = ({ address, postalCode, city, confirmationEmailAddress }) => {
-    return !address || !postalCode || !city || !confirmationEmailAddress;
+    const amount = calculateAmount(cartItems);
+    // Process order
+    this.setState({ orderProcessing: true });
+    let token;
+    try {
+      //create stripe token
+      const response = await this.props.stripe.createToken();
+      token = response.token.id;
+      //create order with strapi sdk (make request to backend)
+      await strapi.createEntry("orders", {
+        amount,
+        brews: cartItems,
+        city,
+        postalcode,
+        address,
+        token
+      });
+      //set order processing - false, modal - false
+      this.setState({ orderProcessing: false, modal: false });
+      //clear user cart of brews
+      clearCart();
+      //show success toast
+      this.showToast("Your order has been successfully submitted!", true);
+    } catch (err) {
+      //set order processing - false, modal - false
+      this.setState({ orderProcessing: false, modal: false });
+      //show error toast
+      this.showToast(err.message);
+      console.log(err.message);
+      //this.showToast("The card number is not valid!");
+    }
   };
 
-  showToast = toastMessage => {
+  isFormEmpty = ({ address, postalcode, city, confirmationEmailAddress }) => {
+    return !address || !postalcode || !city || !confirmationEmailAddress;
+  };
+
+  showToast = (toastMessage, redirect = false) => {
     this.setState({ toast: true, toastMessage });
-    setTimeout(() => this.setState({ toast: false, toastMessage: "" }), 5000);
+    setTimeout(
+      () =>
+        this.setState(
+          { toast: false, toastMessage: "" },
+          // if true passed to 'redirect' argument, redirect home
+          // redirect home, we have to use HOC 'withRouter' to access history
+          // because checkout is not part of switch component
+          () => redirect && this.props.history.push("/")
+        ),
+      5000
+    );
   };
 
   closeModal = () => this.setState({ modal: false });
@@ -120,9 +167,9 @@ class Checkout extends React.Component {
                 />
                 {/* Postal Code Input */}
                 <TextField
-                  id="postalCode"
-                  type="number"
-                  name="postalCode"
+                  id="postalcode"
+                  type="text"
+                  name="postalcode"
                   placeholder="Postal Code"
                   onChange={this.handleChange}
                 />
@@ -141,6 +188,9 @@ class Checkout extends React.Component {
                   name="confirmationEmailAddress"
                   placeholder="Confirmation Email Address"
                   onChange={this.handleChange}
+                />
+                {/* Credit card elements */}
+                <CardElement id="stripe__input" onReady={input => input.focus()}
                 />
                 {/*<button id="stripe__button" type="submit">
                   Submit
@@ -254,5 +304,17 @@ const ConfirmationModal = ({orderProcessing, cartItems, closeModal, handleSubmit
     )}
   </Modal>
 );
+
+const CheckoutForm = withRouter(injectStripe(_CheckoutForm));
+
+const Checkout = () => (
+  <StripeProvider
+    apiKey="pk_test_51HD8PbKXuUXB2CzNtyeX3uWQ4bDgDHoMweFwT7vnY705d56aHB5z4edoc5amUu4NJB9zYsV78tIyJDgghBCt5K5A00WAF8rACN"
+  >
+    <Elements>
+      <CheckoutForm />
+    </Elements>
+  </StripeProvider>
+)
 
 export default Checkout;

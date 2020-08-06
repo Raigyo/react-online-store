@@ -14,6 +14,13 @@ export const calculatePrice = items => {
   }`
 }
 
+//calculate price for stripe using a number type
+export const calculateAmount = items => {
+  return Number(items
+    .reduce((acc, item) => acc + item.quantity * item.price, 0)
+    .toFixed(2));
+}
+
 
 //CART
 //Persisting cart even if we refresh using local storage
