@@ -143,7 +143,7 @@ class App extends Component {
         {/*<Spinner show={loadingBrands} accessibilityLabel="Loading Spinner" />*/}
 
         {/* GridLoader spinner */}
-        <Loader show={loadingBrands} />}
+        <Loader show={loadingBrands} />
 
       </Container>
     )

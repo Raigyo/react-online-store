@@ -59,7 +59,8 @@ class Signup extends React.Component {
   };
 
   render() {
-    // listen to states
+
+    // destructuring props: listen to states
     const { toastMessage, toast, loading } = this.state;
 
     return (
