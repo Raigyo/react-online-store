@@ -517,16 +517,17 @@
       "Orders": {
         "required": [
           "id",
-          "adress",
+          "address",
           "postalcode",
           "city",
-          "brews"
+          "brews",
+          "amount"
         ],
         "properties": {
           "id": {
             "type": "string"
           },
-          "adress": {
+          "address": {
             "type": "string"
           },
           "postalcode": {
@@ -633,13 +634,14 @@
       },
       "NewOrders": {
         "required": [
-          "adress",
+          "address",
           "postalcode",
           "city",
-          "brews"
+          "brews",
+          "amount"
         ],
         "properties": {
-          "adress": {
+          "address": {
             "type": "string"
           },
           "postalcode": {

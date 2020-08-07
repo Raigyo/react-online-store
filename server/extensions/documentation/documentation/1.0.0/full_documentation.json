@@ -14,7 +14,7 @@
       "name": "Apache 2.0",
       "url": "https://www.apache.org/licenses/LICENSE-2.0.html"
     },
-    "x-generation-date": "08/06/2020 6:19:37 PM"
+    "x-generation-date": "08/07/2020 10:36:37 AM"
   },
   "x-strapi-config": {
     "path": "/documentation",
@@ -4142,16 +4142,17 @@
       "Orders": {
         "required": [
           "id",
-          "adress",
+          "address",
           "postalcode",
           "city",
-          "brews"
+          "brews",
+          "amount"
         ],
         "properties": {
           "id": {
             "type": "string"
           },
-          "adress": {
+          "address": {
             "type": "string"
           },
           "postalcode": {
@@ -4258,13 +4259,14 @@
       },
       "NewOrders": {
         "required": [
-          "adress",
+          "address",
           "postalcode",
           "city",
-          "brews"
+          "brews",
+          "amount"
         ],
         "properties": {
-          "adress": {
+          "address": {
             "type": "string"
           },
           "postalcode": {

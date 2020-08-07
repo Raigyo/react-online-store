@@ -7,7 +7,7 @@ create: async ctx => {
     address,
     amount,
     brews,
-    postalCode,
+    postalcode,
     token,
     city
   } = ctx.request.body;
@@ -21,12 +21,22 @@ create: async ctx => {
   });
 
   // Create order in database
-  const order = await strapi.services.orders.add({
+  /*const order = await strapi.services.orders.add({
     user: ctx.state.user._id,
     address,
     amount,
     brews,
-    postalCode,
+    postalcode,
+    city
+  });*/
+
+  // Create order in database
+  const order = await strapi.api.orders.services.orders.create({
+    user: ctx.state.user._id,
+    address,
+    amount,
+    brews,
+    postalcode,
     city
   });
 

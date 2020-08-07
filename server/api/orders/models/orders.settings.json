@@ -9,7 +9,7 @@
     "timestamps": true
   },
   "attributes": {
-    "adress": {
+    "address": {
       "type": "string",
       "required": true
     },
@@ -27,7 +27,7 @@
     },
     "amount": {
       "type": "decimal",
-      "required": false
+      "required": true
     }
   }
 }
