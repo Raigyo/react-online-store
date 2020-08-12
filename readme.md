@@ -62,6 +62,9 @@ CMS. It’s 100% Javascript, fully customizable and developer-first
 - GraphGL: installed using Strapi dashboard.
 - [Stripe](https://stripe.com/fr-be), Online payment processing for internet businesses
       => Use `npm i stripe` after modifying *server/api/orders/controllers/order.js*
+- [strapi-provider-email-sendgrid](https://www.npmjs.com/package/strapi-provider-email-sendgrid)
+- [SendGrid](https://sendgrid.com/)
+      => In */server/* use `npm i strapi-provider-email-sendgrid`
 
 
 ## Useful Links
@@ -77,3 +80,4 @@ CMS. It’s 100% Javascript, fully customizable and developer-first
 - [Reduce() : Le couteau suisse du développeur Javascript](https://medium.com/@hkairi/reduce-le-couteau-suisse-du-d%C3%A9veloppeur-javascript-8cf4b6f98304)
 - [Destructuring Props in React](https://medium.com/@lcriswell/destructuring-props-in-react-b1c295005ce0)
 - [Deploying a Strapi API on Heroku](https://strapi.io/blog/deploying-a-strapi-api-on-heroku)
+- [Deploy Strapi app on Heroku using MongoDB Atlas](https://www.youtube.com/watch?v=HHnRsZwFmR8)

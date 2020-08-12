@@ -42,22 +42,51 @@ class App extends Component {
   };
 
   // Input listener
-  handleChange = ({value}) => {
+  /*handleChange = ({value}) => {
     this.setState({ searchTerm: value });
+  };*/
+
+  handleChange = ({ value }) => {
+    this.setState({ searchTerm: value }, () => this.searchBrands());
   };
 
+
   // Filter the brands displayed according search term (in name and description)
-  filteredBrands = ({ searchTerm, brands }) => {
+  /*filteredBrands = ({ searchTerm, brands }) => {
     return brands.filter(brand => {
       return (
         brand.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
         brand.description.toLowerCase().includes(searchTerm.toLowerCase())
       )
     })
-  }
+  }*/
+
+  searchBrands = async () => {
+    const response = await strapi.request("POST", "/graphql", {
+      data: {
+        query: `query {
+          brands(where: {
+            name_contains: "${this.state.searchTerm}"
+          }) {
+            _id
+              name
+              description
+              image {
+                url
+              }
+          }
+        }`
+      }
+    });
+    // console.log(this.state.searchTerm, response.data.brands);
+    this.setState({
+      brands: response.data.brands,
+      loadingBrands: false
+    });
+  };
 
   render() {
-    const { searchTerm, loadingBrands } = this.state;
+    const { searchTerm, loadingBrands, brands } = this.state;
 
     return(
       <Container>
@@ -107,7 +136,8 @@ class App extends Component {
           display="flex"
           justifyContent="around"
         >
-          {this.filteredBrands(this.state).map(brand => (
+          {/* {this.filteredBrands(this.state).map(brand => ( */}
+           {brands.map(brand => (
             <Box paddingY={4} margin={2} width={200} key={brand._id}>
               <Card
                 image={

@@ -43,7 +43,7 @@ class _CheckoutForm extends React.Component {
   }
 
   handleSubmitOrder = async () => {
-    const { cartItems, city, address, postalcode } = this.state;
+    const { cartItems, city, address, postalcode, confirmationEmailAddress } = this.state;
 
     const amount = calculateAmount(cartItems);
     // Process order
@@ -62,6 +62,13 @@ class _CheckoutForm extends React.Component {
         address,
         token
       });
+      /*await strapi.plugins['email'].services.email.send({
+        to: confirmationEmailAddress,
+        from: 'vincent_chilot@live.be',
+        subject: `Order Confirmation - Raigyo Shop ${new Date(Date.now())} -Do not reply`,
+        text: "Your order has been processed",
+        html: "<bold>Expect your order to arrive in 2-3 shipping days</bold>"
+      });*/
       //set order processing - false, modal - false
       this.setState({ orderProcessing: false, modal: false });
       //clear user cart of brews

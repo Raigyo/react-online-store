@@ -52,9 +52,12 @@ const AuthNav = ({ handleSignout }) => (
             src="../icons/logo.svg"
           />
         </Box>
-        <Heading size="xs" color="orange">
-          Raigyo shop
-        </Heading>
+        {/* Title */}
+        <div className="main-title">
+          <Heading size="xs" color="orange">
+            Raigyo shop
+          </Heading>
+        </div>
       </Box>
     </NavLink>
 
