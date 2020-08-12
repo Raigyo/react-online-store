@@ -4,7 +4,18 @@
 
 > 🔨 From Udemy '[Build an Online Store with React and GraphQL in 90 Minutes](https://www.udemy.com/course/build-an-online-store-with-react-and-graphql-in-90-minutes/)'.
 
+![screen-01.PNG](img-readme/strapi.jpg)
+
 ## About
+
+![screen-01.PNG](img-readme/screen-01.PNG)
+
+![screen-02.PNG](img-readme/screen-02.PNG)
+
+![screen-03.PNG](img-readme/screen-03.PNG)
+
+![screen-04.PNG](img-readme/screen-04.PNG)
+
 
 ## How to launch in dev mode
 
