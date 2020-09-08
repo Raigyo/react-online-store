@@ -29,6 +29,13 @@ cd server //(or name choosen)
 npm run develop
 ```
 
+If error: *Cannot find module '../build/Release/sharp.node'*
+
+- - Delete node_modules folder
+- Clear npm cache `npm cache clean --force`
+- (Optional) upgrade npm packages `npm install npm@latest -g`
+- Re-install packages by running `npm install`
+
 ## React
 
 Use import in React to import Strapi as component:
@@ -83,6 +90,7 @@ CMS. It’s 100% Javascript, fully customizable and developer-first
 - [Build an Online Store with React and GraphQL in 90 Minutes](https://www.udemy.com/course/build-an-online-store-with-react-and-graphql-in-90-minutes/)
 - [Source code for the "Build an Online Store with React and GraphQL in 90 Minutes" Udemy Course.](https://github.com/peelmicro/build-an-online-store-with-react-and-graphql-in-90-minutes)
 - [Strapi - Open source Node.js Headless CMS 🚀](https://strapi.io/)
+- [Local Strapi + cloud MongoDB Atlas](https://medium.com/@firstsquares/local-strapi-cloud-mongodb-atlas-cc65288f0dee)
 - [Stripe: Online payment processing for internet businesses](https://stripe.com/fr-be)
 - [FAQ: No LogoTypes shows up..](https://www.udemy.com/course/build-an-online-store-with-react-and-graphql-in-90-minutes/learn/lecture/11669406#questions/9412605)
 - [React Spinners](https://www.davidhu.io/react-spinners/)
