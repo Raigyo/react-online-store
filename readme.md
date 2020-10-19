@@ -100,5 +100,6 @@ CMS. It’s 100% Javascript, fully customizable and developer-first
 - [Destructuring Props in React](https://medium.com/@lcriswell/destructuring-props-in-react-b1c295005ce0)
 - [Deploy Strapi app on Heroku using MongoDB Atlas](https://strapi.io/documentation/v3.x/deployment/heroku.html) (MongoDB tab)
 - [How to deploy React App to GitHub Pages](https://dev.to/yuribenjamin/how-to-deploy-react-app-in-github-pages-2a1f)
+- [Deploying a create-react-app with routing to GitHub pages](https://medium.com/@bennirus/deploying-a-create-react-app-with-routing-to-github-pages-f386b6ce84c2)
 - [Module build failed: BrowserslistError: Unknown browser query `dead`](https://stackoverflow.com/questions/52939103/browserslisterror-unknown-browser-query-dead-in-react-express-app)
 - [My React application failed to compile strapi sdk](https://stackoverflow.com/questions/57650891/my-react-application-failed-to-compile-strapi-sdk)
