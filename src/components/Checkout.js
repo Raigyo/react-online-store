@@ -5,7 +5,7 @@ import ToastMessage from "./ToastMessage";
 import { getCart, calculatePrice, clearCart, calculateAmount } from "../utils";
 import { withRouter } from "react-router-dom";
 import Strapi from "strapi-sdk-javascript/build/main";
-const apiUrl = process.env.API_URL || "http://localhost:1337";
+const apiUrl = process.env.API_URL || "https://strapi-server-raigyobeer.herokuapp.com";
 const strapi = new Strapi(apiUrl);
 
 class _CheckoutForm extends React.Component {

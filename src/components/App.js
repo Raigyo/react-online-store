@@ -1,24 +1,32 @@
 import React, { Component } from "react";
-import { Container, Box, Heading, Card, Image, Text, SearchField, Icon  } from 'gestalt';
-import { Link } from 'react-router-dom';
-import Loader from "./Loader"
+import {
+  Container,
+  Box,
+  Heading,
+  Card,
+  Image,
+  Text,
+  SearchField,
+  Icon,
+} from "gestalt";
+import { Link } from "react-router-dom";
+import Loader from "./Loader";
 import "./App.css";
-import Strapi from 'strapi-sdk-javascript/build/main';
-const apiUrl = process.env.API_URL || 'http://localhost:1337';
+import Strapi from "strapi-sdk-javascript/build/main";
+const apiUrl = process.env.API_URL || "https://strapi-server-raigyobeer.herokuapp.com";
 const strapi = new Strapi(apiUrl);
 
 class App extends Component {
-
   state = {
     brands: [],
-    searchTerm: '',
-    loadingBrands: true
-  }
+    searchTerm: "",
+    loadingBrands: true,
+  };
 
   // Retrieve the brands datas
   async componentDidMount() {
-    try{
-      const response = await strapi.request('POST', '/graphql', {
+    try {
+      const response = await strapi.request("POST", "/graphql", {
         data: {
           query: `query {
             brands {
@@ -29,17 +37,16 @@ class App extends Component {
                 url
               }
             }
-          }`
-        }
+          }`,
+        },
       });
       //console.log(response);
       this.setState({ brands: response.data.brands, loadingBrands: false });
-    }
-    catch (err) {
+    } catch (err) {
       console.error(err);
       this.setState({ loadingBrands: false });
     }
-  };
+  }
 
   // Input listener
   /*handleChange = ({value}) => {
@@ -49,7 +56,6 @@ class App extends Component {
   handleChange = ({ value }) => {
     this.setState({ searchTerm: value }, () => this.searchBrands());
   };
-
 
   // Filter the brands displayed according search term (in name and description)
   /*filteredBrands = ({ searchTerm, brands }) => {
@@ -75,22 +81,21 @@ class App extends Component {
                 url
               }
           }
-        }`
-      }
+        }`,
+      },
     });
     // console.log(this.state.searchTerm, response.data.brands);
     this.setState({
       brands: response.data.brands,
-      loadingBrands: false
+      loadingBrands: false,
     });
   };
 
   render() {
     const { searchTerm, loadingBrands, brands } = this.state;
 
-    return(
+    return (
       <Container>
-
         {/* Brands Search Field */}
         <Box display="flex" justifyContent="center" marginTop={4}>
           <SearchField
@@ -104,7 +109,7 @@ class App extends Component {
             <Icon
               icon="filter"
               /* Ternary true: orange, false: gray */
-              color={searchTerm ? 'orange' : 'gray'}
+              color={searchTerm ? "orange" : "gray"}
               size={20}
               accessibilityLabel="Filter"
             />
@@ -112,11 +117,7 @@ class App extends Component {
         </Box>
 
         {/* Brands Section */}
-        <Box
-          display="flex"
-          justifyContent="center"
-          marginBottom={2}
-        >
+        <Box display="flex" justifyContent="center" marginBottom={2}>
           {/* Brands Header */}
           <Heading color="midnight" size="md">
             Brew Brands
@@ -127,9 +128,9 @@ class App extends Component {
         <Box
           /* Gestalt properties for box */
           dangerouslySetInlineStyle={{
-            __style:{
-              backgroundColor: '#d6c8ec'
-            }
+            __style: {
+              backgroundColor: "#d6c8ec",
+            },
           }}
           shape="rounded"
           wrap
@@ -137,7 +138,7 @@ class App extends Component {
           justifyContent="around"
         >
           {/* {this.filteredBrands(this.state).map(brand => ( */}
-           {brands.map(brand => (
+          {brands.map((brand) => (
             <Box paddingY={4} margin={2} width={200} key={brand._id}>
               <Card
                 image={
@@ -153,12 +154,14 @@ class App extends Component {
                 }
               >
                 <Box
-                display="flex"
-                alignItems="center"
-                justifyContent="center"
-                direction="column"
+                  display="flex"
+                  alignItems="center"
+                  justifyContent="center"
+                  direction="column"
                 >
-                  <Text bold size="xl">{brand.name}</Text>
+                  <Text bold size="xl">
+                    {brand.name}
+                  </Text>
                   <Text>{brand.description}</Text>
                   <Text bold size="xl">
                     <Link to={`/${brand._id}`}>See Brews</Link>
@@ -174,10 +177,9 @@ class App extends Component {
 
         {/* GridLoader spinner */}
         <Loader show={loadingBrands} />
-
       </Container>
-    )
-  };
-};
+    );
+  }
+}
 
 export default App;

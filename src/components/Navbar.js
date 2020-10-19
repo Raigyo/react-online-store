@@ -2,6 +2,7 @@ import React from 'react';
 import { Box, Text, Heading, Image, Button } from 'gestalt';
 import { getToken, clearCart, clearToken } from "../utils"
 import { NavLink, withRouter } from 'react-router-dom';
+import logo from '../img/logo.svg';
 
 //Return a different nav bar if user is authentified or not
 /*const Navbar = () => {
@@ -49,7 +50,7 @@ const AuthNav = ({ handleSignout }) => (
             alt="Sop logo"
             naturalHeight={1}
             naturalWidth={1}
-            src="../icons/logo.svg"
+            src={logo}
           />
         </Box>
         {/* Title */}
@@ -97,7 +98,7 @@ const UnAuthNav = () => (
             alt="Sop logo"
             naturalHeight={1}
             naturalWidth={1}
-            src="../icons/logo.svg"
+            src={logo}
           />
         </Box>
         <Heading size="xs" color="orange">

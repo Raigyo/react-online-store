@@ -1,4 +1,5 @@
 {
+  "homepage": "http://raigyo-dev.be/beer-shop-admin",
   "name": "server",
   "private": true,
   "version": "0.1.0",
