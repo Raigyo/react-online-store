@@ -9,10 +9,11 @@ import {
   SearchField,
   Icon,
 } from "gestalt";
-import { HashRouter, Link } from "react-router-dom";
+import { HashRouter as Router, Link } from "react-router-dom";
 import Loader from "./Loader";
 import "./App.css";
 import Strapi from "strapi-sdk-javascript/build/main";
+//const apiUrl = process.env.API_URL || "http://localhost:1337";
 const apiUrl = process.env.API_URL || "https://strapi-server-raigyobeer.herokuapp.com";
 const strapi = new Strapi(apiUrl);
 
@@ -95,7 +96,7 @@ class App extends Component {
     const { searchTerm, loadingBrands, brands } = this.state;
 
     return (
-      <HashRouter basename='/'>
+      <Router>
         <Container>
           {/* Brands Search Field */}
           <Box display="flex" justifyContent="center" marginTop={4}>
@@ -179,7 +180,7 @@ class App extends Component {
           {/* GridLoader spinner */}
           <Loader show={loadingBrands} />
         </Container>
-      </HashRouter>
+      </Router>
     );
   }
 }

@@ -103,3 +103,4 @@ CMS. It’s 100% Javascript, fully customizable and developer-first
 - [Deploying a create-react-app with routing to GitHub pages](https://medium.com/@bennirus/deploying-a-create-react-app-with-routing-to-github-pages-f386b6ce84c2)
 - [Module build failed: BrowserslistError: Unknown browser query `dead`](https://stackoverflow.com/questions/52939103/browserslisterror-unknown-browser-query-dead-in-react-express-app)
 - [My React application failed to compile strapi sdk](https://stackoverflow.com/questions/57650891/my-react-application-failed-to-compile-strapi-sdk)
+- [Strapi stable version 3.0.x set default file upload provider to AWS S3 / Google Cloud Storage (GCS) / Cloudinary](https://medium.com/@kwinten.yc.li/strapi-set-default-file-upload-provider-to-s3-cloudinary-rackspace-5b8ef6f61daa)
