@@ -3,7 +3,8 @@ import { Container, Box, Heading, TextField, Button } from 'gestalt';
 import ToastMessage from './ToastMessage';
 import { setToken } from "../utils";
 import Strapi from "strapi-sdk-javascript/build/main";
-const apiUrl = process.env.API_URL || "http://localhost:1337";
+//const apiUrl = process.env.API_URL || "http://localhost:1337";
+const apiUrl = process.env.API_URL || "https://strapi-server-raigyobeer.herokuapp.com/";
 const strapi = new Strapi(apiUrl);
 
 class Signin extends React.Component {
@@ -36,7 +37,7 @@ class Signin extends React.Component {
           const response = await strapi.login(username, password);
           this.setState({ loading: false });
           setToken(response.jwt);
-          this.redirectUser("/");
+          this.redirectUser("/react-online-store");
         } catch (err) {
           this.setState({ loading: false });
           console.log(err.message);

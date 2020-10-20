@@ -5,7 +5,8 @@ import ToastMessage from "./ToastMessage";
 import { getCart, calculatePrice, clearCart, calculateAmount } from "../utils";
 import { withRouter } from "react-router-dom";
 import Strapi from "strapi-sdk-javascript/build/main";
-const apiUrl = process.env.API_URL || "http://localhost:1337";
+//const apiUrl = process.env.API_URL || "http://localhost:1337";
+const apiUrl = process.env.API_URL || "https://strapi-server-raigyobeer.herokuapp.com";
 const strapi = new Strapi(apiUrl);
 
 class _CheckoutForm extends React.Component {
@@ -98,7 +99,7 @@ class _CheckoutForm extends React.Component {
           // if true passed to 'redirect' argument, redirect home
           // redirect home, we have to use HOC 'withRouter' to access history
           // because checkout is not part of switch component
-          () => redirect && this.props.history.push("/")
+          () => redirect && this.props.history.push("/react-online-store")
         ),
       5000
     );

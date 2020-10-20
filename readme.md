@@ -4,6 +4,12 @@
 
 > 🔨 From Udemy '[Build an Online Store with React and GraphQL in 90 Minutes](https://www.udemy.com/course/build-an-online-store-with-react-and-graphql-in-90-minutes/)'.
 
+Demo on [Github page](https://raigyo.github.io/react-online-store).
+
+To valid the credit card do as suggested by [Stripe](https://stripe.dev/react-stripe-elements/): *Need a test card? Try 4242 4242 4242 4242, a valid expiration date in the future, and any CVC number and zip code.*
+
+The Strapi CMS part is hosted on heroku and uses [cloudinary](https://cloudinary.com/) to host images.
+
 ![screen-01.PNG](img-readme/strapi.jpg)
 
 ## About
@@ -98,5 +104,9 @@ CMS. It’s 100% Javascript, fully customizable and developer-first
 - [Finally Understand the JavaScript Reduce Method](https://alligator.io/js/finally-understand-reduce/)
 - [Reduce() : Le couteau suisse du développeur Javascript](https://medium.com/@hkairi/reduce-le-couteau-suisse-du-d%C3%A9veloppeur-javascript-8cf4b6f98304)
 - [Destructuring Props in React](https://medium.com/@lcriswell/destructuring-props-in-react-b1c295005ce0)
-- [Deploying a Strapi API on Heroku](https://strapi.io/blog/deploying-a-strapi-api-on-heroku)
-- [Deploy Strapi app on Heroku using MongoDB Atlas](https://www.youtube.com/watch?v=HHnRsZwFmR8)
+- [Deploy Strapi app on Heroku using MongoDB Atlas](https://strapi.io/documentation/v3.x/deployment/heroku.html) (MongoDB tab)
+- [How to deploy React App to GitHub Pages](https://dev.to/yuribenjamin/how-to-deploy-react-app-in-github-pages-2a1f)
+- [Deploying a create-react-app with routing to GitHub pages](https://medium.com/@bennirus/deploying-a-create-react-app-with-routing-to-github-pages-f386b6ce84c2)
+- [Module build failed: BrowserslistError: Unknown browser query `dead`](https://stackoverflow.com/questions/52939103/browserslisterror-unknown-browser-query-dead-in-react-express-app)
+- [My React application failed to compile strapi sdk](https://stackoverflow.com/questions/57650891/my-react-application-failed-to-compile-strapi-sdk)
+- [Strapi stable version 3.0.x set default file upload provider to AWS S3 / Google Cloud Storage (GCS) / Cloudinary](https://medium.com/@kwinten.yc.li/strapi-set-default-file-upload-provider-to-s3-cloudinary-rackspace-5b8ef6f61daa)

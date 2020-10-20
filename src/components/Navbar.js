@@ -2,6 +2,7 @@ import React from 'react';
 import { Box, Text, Heading, Image, Button } from 'gestalt';
 import { getToken, clearCart, clearToken } from "../utils"
 import { NavLink, withRouter } from 'react-router-dom';
+import logo from '../img/logo.svg';
 
 //Return a different nav bar if user is authentified or not
 /*const Navbar = () => {
@@ -17,7 +18,7 @@ handleSignout = () => {
   clearCart();
   //redirect home, we have to use HOC 'withRouter' to access history
   //because navbar is not part of switch component
-  this.props.history.push('/');
+  this.props.history.push('/react-online-store');
 }
 
   render(){
@@ -42,14 +43,14 @@ const AuthNav = ({ handleSignout }) => (
     </NavLink>
 
     { /* Title and Logo */ }
-    <NavLink activeClassName="active" exact to="/">
+    <NavLink activeClassName="active" exact to="/react-online-store">
       <Box display="flex" alignItems="center">
         <Box height={50} width={50} margin={2}>
           <Image
             alt="Sop logo"
             naturalHeight={1}
             naturalWidth={1}
-            src="../icons/logo.svg"
+            src={logo}
           />
         </Box>
         {/* Title */}
@@ -90,14 +91,14 @@ const UnAuthNav = () => (
     </NavLink>
 
     { /* Title and Logo */ }
-    <NavLink activeClassName="active" exact to="/">
+    <NavLink activeClassName="active" exact to="/react-online-store">
       <Box display="flex" alignItems="center">
         <Box height={50} width={50} margin={2}>
           <Image
             alt="Sop logo"
             naturalHeight={1}
             naturalWidth={1}
-            src="../icons/logo.svg"
+            src={logo}
           />
         </Box>
         <Heading size="xs" color="orange">

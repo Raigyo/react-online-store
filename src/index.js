@@ -30,14 +30,14 @@ const Root = () => (
     <React.Fragment>
       <Navbar />
       <Switch>
-        <Route component={App} exact path="/" />
+        <Route exact path="/react-online-store" component={App} />
         {/* use exact property otherwise it will always choose the route "/"*/}
-        <Route component={Signin} path="/signin" />
-        <Route component={Signup} path="/signup" />
+        <Route path="/signin" component={Signin} />
+        <Route path="/signup" component={Signup} />
         {/* Route displayed only if logged otherwise redirected to signin */}
-        <PrivateRoute component={Checkout} path="/checkout" />
+        <PrivateRoute path="/checkout" component={Checkout} />
         {/* Dynamic route*/}
-        <Route component={Brews} path="/:brandId" />
+        <Route path="/:brandId" component={Brews} />
       </Switch>
     </React.Fragment>
   </Router>

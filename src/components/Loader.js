@@ -9,7 +9,7 @@ const Loader = ({ show }) =>
       position="fixed"
       dangerouslySetInlineStyle={{
         __style: {
-          bottom: 300,
+          bottom: 400,
           left: "50%",
           transform: "translateX(-50%)"
         }

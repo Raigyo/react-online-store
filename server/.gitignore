@@ -16,8 +16,8 @@ Icon
 ############################
 
 *~
-database.js
-server.js
+package-lock.json
+
 
 ############################
 # Windows
@@ -113,3 +113,5 @@ license.txt
 exports
 .cache
 build
+
+database.js
