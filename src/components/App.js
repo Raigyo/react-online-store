@@ -149,7 +149,8 @@ class App extends Component {
                       alt={`${"Logo brand: "}${brand.name}`}
                       naturalHeight={1}
                       naturalWidth={1}
-                      src={`${apiUrl}${brand.image[0].url}`}
+                      //src={`${apiUrl}${brand.image[0].url}`}
+                      src={`${brand.image[0].url}`}
                     />
                   </Box>
                 }
