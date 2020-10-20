@@ -5,8 +5,8 @@ import ToastMessage from "./ToastMessage";
 import { getCart, calculatePrice, clearCart, calculateAmount } from "../utils";
 import { withRouter } from "react-router-dom";
 import Strapi from "strapi-sdk-javascript/build/main";
-//const apiUrl = process.env.API_URL || "http://localhost:1337";
-const apiUrl = process.env.API_URL || "https://strapi-server-raigyobeer.herokuapp.com";
+const apiUrl = process.env.API_URL || "http://localhost:1337";
+//const apiUrl = process.env.API_URL || "https://strapi-server-raigyobeer.herokuapp.com";
 const strapi = new Strapi(apiUrl);
 
 class _CheckoutForm extends React.Component {
@@ -63,13 +63,13 @@ class _CheckoutForm extends React.Component {
         address,
         token
       });
-      /*await strapi.plugins['email'].services.email.send({
-        to: confirmationEmailAddress,
-        from: 'vincent_chilot@live.be',
-        subject: `Order Confirmation - Raigyo Shop ${new Date(Date.now())} -Do not reply`,
-        text: "Your order has been processed",
-        html: "<bold>Expect your order to arrive in 2-3 shipping days</bold>"
-      });*/
+      // await strapi.plugins['email'].services.email.send({
+      //   to: confirmationEmailAddress,
+      //   from: 'vincent.chilot@gmail.com',
+      //   subject: `Order Confirmation - Raigyo Shop ${new Date(Date.now())} -Do not reply`,
+      //   text: "Your order has been processed",
+      //   html: "<bold>Expect your order to arrive in 2-3 shipping days</bold>"
+      // });
       //set order processing - false, modal - false
       this.setState({ orderProcessing: false, modal: false });
       //clear user cart of brews
@@ -317,7 +317,8 @@ const CheckoutForm = withRouter(injectStripe(_CheckoutForm));
 
 const Checkout = () => (
   <StripeProvider
-    apiKey="pk_test_51HD8PbKXuUXB2CzNtyeX3uWQ4bDgDHoMweFwT7vnY705d56aHB5z4edoc5amUu4NJB9zYsV78tIyJDgghBCt5K5A00WAF8rACN"
+    //apiKey="pk_test_51HD8PbKXuUXB2CzNtyeX3uWQ4bDgDHoMweFwT7vnY705d56aHB5z4edoc5amUu4NJB9zYsV78tIyJDgghBCt5K5A00WAF8rACN"
+    apiKey={process.env.REACT_APP_STRIPE_API_KEY}
   >
     <Elements>
       <CheckoutForm />
