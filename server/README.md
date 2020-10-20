@@ -22,7 +22,7 @@ Admin: *http://localhost:1337/admin*
 ### Set environment variables (MongoDB)
 
 ````
-heroku config:set DATABASE_URI="mongodb+srv://chilot:<PASSWORD>@cluster0.2hkt1.mongodb.net/<DB_NAME>?retryWrites=true&w=majority"
+heroku config:set DATABASE_URI="mongodb+srv://chilot:25_01_75_M@cluster0.2hkt1.mongodb.net/server?retryWrites=true&w=majority"
 
 heroku config:set DATABASE_NAME="server"
 ````
@@ -58,9 +58,9 @@ module.exports = ({ env }) => ({
         ),
         srv: env.bool("DATABASE_SRV", true),
         port: env.int("DATABASE_PORT", 27017),
-        database: env("DATABASE_NAME", "<DATABASE_NAME>"),
-        username: env("DATABASE_USERNAME", "<DATABASE_USERNAME>"),
-        password: env("DATABASE_PASSWORD", "<DATABASE_PASSWORD>"),
+        database: env("DATABASE_NAME", "server"),
+        username: env("DATABASE_USERNAME", "chilot"),
+        password: env("DATABASE_PASSWORD", "25_01_75_M"),
       },
       options: {
         authenticationDatabase: env("AUTHENTICATION_DATABASE", null),
@@ -95,7 +95,7 @@ module.exports = ({ env }) => ({
 ````
 git add .
 git commit -m "Update database config"
-git push heroku master
+git push heroku master (or: heroku opengit push heroku HEAD:master)
 heroku open
 ````
 
@@ -104,3 +104,4 @@ heroku open
 ## Useful links
 
 - [Deploy on heroku](https://strapi.io/documentation/v3.x/deployment/heroku.html) (MongoDB tab)
+- [Environment variables](https://strapi.io/documentation/v3.x/concepts/configurations.html#environment-variables)

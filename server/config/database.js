@@ -1,4 +1,4 @@
-module.exports = ({ env }) => ({
+module.exports = () => ({
   defaultConnection: 'default',
   connections: {
     default: {
