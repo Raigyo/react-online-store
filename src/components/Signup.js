@@ -3,8 +3,7 @@ import { Container, Box, Heading, Text, TextField, Button } from 'gestalt';
 import ToastMessage from './ToastMessage';
 import { setToken } from "../utils";
 import Strapi from "strapi-sdk-javascript/build/main";
-const apiUrl = process.env.API_URL || "http://localhost:1337";
-//const apiUrl = process.env.API_URL || "https://strapi-server-raigyobeer.herokuapp.com/";
+const apiUrl = process.env.API_URL || "https://strapi-server-raigyobeer.herokuapp.com/";
 const strapi = new Strapi(apiUrl);
 
 class Signup extends React.Component {

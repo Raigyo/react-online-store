@@ -1,6 +1,6 @@
 # Online Store with React, Strapi CMS with GraphQL & Stripe
 
-*July 2020*
+*July 2020 (updated: October 2020)*
 
 > 🔨 From Udemy '[Build an Online Store with React and GraphQL in 90 Minutes](https://www.udemy.com/course/build-an-online-store-with-react-and-graphql-in-90-minutes/)'.
 

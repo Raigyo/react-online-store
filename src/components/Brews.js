@@ -4,8 +4,7 @@ import { Box, Heading, Card, Image, Text, Button, Mask, IconButton  } from 'gest
 import { calculatePrice, setCart, getCart } from "../utils"
 import { Link } from 'react-router-dom';
 import Loader from "./Loader";
-const apiUrl = process.env.API_URL || "http://localhost:1337";
-//const apiUrl = process.env.API_URL || "https://strapi-server-raigyobeer.herokuapp.com";
+const apiUrl = process.env.API_URL || "https://strapi-server-raigyobeer.herokuapp.com";
 const strapi = new Strapi(apiUrl);
 
 class Brews extends React.Component {
