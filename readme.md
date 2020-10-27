@@ -104,6 +104,7 @@ CMS. It’s 100% Javascript, fully customizable and developer-first
 - [Finally Understand the JavaScript Reduce Method](https://alligator.io/js/finally-understand-reduce/)
 - [Reduce() : Le couteau suisse du développeur Javascript](https://medium.com/@hkairi/reduce-le-couteau-suisse-du-d%C3%A9veloppeur-javascript-8cf4b6f98304)
 - [Destructuring Props in React](https://medium.com/@lcriswell/destructuring-props-in-react-b1c295005ce0)
+- [Using React Router <NavLink> to Specify Which Element in a Navigation Bar Is Active](https://medium.com/swlh/using-react-router-navlink-to-specify-the-active-element-in-a-navigation-bar-38700ffd4900)
 - [https://www.npmjs.com/package/strapi-provider-email-sendgrid](https://www.npmjs.com/package/strapi-provider-email-sendgrid)
 - [How to Store API Keys and ENV Vars in a create-react-app Project](https://lortza.github.io/2018/05/22/create-react-app-api-keys.html)
 - [Deploy Strapi app on Heroku using MongoDB Atlas](https://strapi.io/documentation/v3.x/deployment/heroku.html) (MongoDB tab)
