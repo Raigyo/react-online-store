@@ -316,7 +316,6 @@ const CheckoutForm = withRouter(injectStripe(_CheckoutForm));
 
 const Checkout = () => (
   <StripeProvider
-    //apiKey="pk_test_51HD8PbKXuUXB2CzNtyeX3uWQ4bDgDHoMweFwT7vnY705d56aHB5z4edoc5amUu4NJB9zYsV78tIyJDgghBCt5K5A00WAF8rACN"
     apiKey={process.env.REACT_APP_STRIPE_API_KEY}
   >
     <Elements>
