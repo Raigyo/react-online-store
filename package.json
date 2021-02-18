@@ -10,7 +10,7 @@
     "react-router-dom": "^4.3.1",
     "react-scripts": "^3.4.3",
     "react-spinners": "^0.4.5",
-    "react-stripe-elements": "^2.0.1",
+    "react-stripe-elements": "^6.1.2",
     "strapi-provider-email-sendgrid": "^3.2.4",
     "strapi-sdk-javascript": "^0.3.3"
   },
