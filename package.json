@@ -4,7 +4,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "gestalt": "^0.79.1",
+    "gestalt": "^17.6.3",
     "react": "^16.14.0",
     "react-dom": "^16.14.0",
     "react-router-dom": "^4.3.1",
