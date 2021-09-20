@@ -22,7 +22,9 @@ Admin: *http://localhost:1337/admin*
 ### Set environment variables (MongoDB)
 
 ````
-heroku config:set DATABASE_URI="mongodb+srv://chilot:25_01_75_M@cluster0.2hkt1.mongodb.net/server?retryWrites=true&w=majority"
+heroku config:set DATABASE_URI="mongodb+srv://chilot:<PASSWORD>@cluster0.2hkt1.mongodb.net/server?retryWrites=true&w=majority"
+
+(or using Node 2 if connection problems: mongodb://chilot:<PASSWORD>@cluster0-shard-00-00.2hkt1.mongodb.net:27017,cluster0-shard-00-01.2hkt1.mongodb.net:27017,cluster0-shard-00-02.2hkt1.mongodb.net:27017/server?ssl=true&replicaSet=atlas-1yuzfz-shard-0&authSource=admin&retryWrites=true&w=majority)
 
 heroku config:set DATABASE_NAME="server"
 ````
