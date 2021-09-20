@@ -113,3 +113,4 @@ CMS. It’s 100% Javascript, fully customizable and developer-first
 - [Module build failed: BrowserslistError: Unknown browser query `dead`](https://stackoverflow.com/questions/52939103/browserslisterror-unknown-browser-query-dead-in-react-express-app)
 - [My React application failed to compile strapi sdk](https://stackoverflow.com/questions/57650891/my-react-application-failed-to-compile-strapi-sdk)
 - [Strapi stable version 3.0.x set default file upload provider to AWS S3 / Google Cloud Storage (GCS) / Cloudinary](https://medium.com/@kwinten.yc.li/strapi-set-default-file-upload-provider-to-s3-cloudinary-rackspace-5b8ef6f61daa)
+- [How to fix 'Error: querySrv EREFUSED' when connecting to MongoDB Atlas?How to fix 'Error: querySrv EREFUSED' when connecting to MongoDB Atlas?](https://stackoverflow.com/questions/55499175/how-to-fix-error-querysrv-erefused-when-connecting-to-mongodb-atlas)
